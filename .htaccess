@@ -1,0 +1,17 @@
+Options +FollowSymlinks
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+ErrorDocument 403 /Creators_hub/view/error/403.php
+ErrorDocument 404 /Creators_hub/view/error/404.php
+ErrorDocument 500 /Creators_hub/view/error/500.php
+
+# eliminar extension php
+# controlar acceso archivos
+RewriteCond %{REQUEST_FILENAME}.php -f 
+RewriteRule ^(.*)$ $1.php
+
+</IfModule>
